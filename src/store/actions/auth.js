@@ -76,10 +76,10 @@ export const auth=(email, password,isSignup)=>{
         //VAŽNO: ukoliko ne spremimo token, svaki put kada se stranica refresha, refreshamo naravno i redux state pa ukoliko nismo spremli token u local storge ako je korisnik
         //bio 'auth' više neće biti nakon refresha.
       
-        let url='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBtIEtssRnACoK6EfYc692lET2-NQhkLSM'
+        let url='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=dodajOvdjeNoviKey'
         if (!isSignup){
             //Ovaj je url za sign-in
-           url= 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBtIEtssRnACoK6EfYc692lET2-NQhkLSM'
+           url= 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=dodajOvdjeNoviKey'
         }
         axios.post(url,authData)
         .then(response=>{
